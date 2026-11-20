@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Login Simulation</title>
+
+<script src="/static/script.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gray-900 text-white flex items-center justify-center h-screen">
+
+<div class="bg-gray-800 p-8 rounded-xl w-80">
+
+<h2 class="text-xl mb-4">Login Test</h2>
+
+<input id="user" placeholder="Username"
+class="w-full p-2 mb-3 text-black">
+
+<input id="pass" type="password" placeholder="Password"
+class="w-full p-2 mb-3 text-black">
+<button onclick="goDashboard()"
+class="bg-green-500 w-full p-2 rounded">
+Login
+</button>
+<script>
+
+function goDashboard(){
+
+window.location.href="/dashboard"
+
+}
+
+</script>
+</div>
+
+</body>
+</html>

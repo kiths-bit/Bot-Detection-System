@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bot Detection Dashboard</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🛡 Bot Detection Dashboard</h1>
+
+<div class="card">
+
+<h2>Status</h2>
+
+{% if status == "Human" %}
+<p class="human">✅ Human Detected</p>
+{% else %}
+<p class="bot">🚨 Bot Detected</p>
+{% endif %}
+
+<p><b>Bot Score:</b> {{bot_score}}</p>
+<p><b>IP Address:</b> {{ip}}</p>
+
+<p><b>User Agent:</b></p>
+<div class="agent">
+{{agent}}
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Recent Requests</h2>
+
+<table>
+<tr>
+<th>IP</th>
+<th>Status</th>
+<th>User Agent</th>
+</tr>
+
+{% for item in log %}
+<tr>
+<td>{{item.ip}}</td>
+<td>{{item.status}}</td>
+<td>{{item.agent}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+</div>
+
+</body>
+</html>
